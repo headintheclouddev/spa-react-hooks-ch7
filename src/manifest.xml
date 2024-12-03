@@ -1,0 +1,12 @@
+<manifest projecttype="SUITEAPP">
+  <publisherid>com.headintheclouddev</publisherid>
+  <projectid>spareacthooksch7</projectid>
+  <projectname>SPA React Hooks Chapter 7</projectname>
+  <projectversion>1.0.0</projectversion>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+    </features>
+  </dependencies>
+</manifest>
