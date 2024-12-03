@@ -1,14 +1,14 @@
 import { JSX, useReducer, useEffect, VDom, useState } from '@uif-js/core';
-import UserBar from './user/UserBar';
+// import UserBar from './user/UserBar';
 import PostList from './post/PostList';
-import CreatePost from './post/CreatePost';
-// import {IPostProps} from "./post/Post";
+// import CreatePost from './post/CreatePost';
 import appReducer from "./reducers";
-import Header from './Header';
-import ChangeTheme from './ChangeTheme';
+// import Header from './Header';
+// import ChangeTheme from './ChangeTheme';
 import { ThemeContext } from './contexts';
 import log from 'N/log';
 import query from "N/query";
+import HeaderBar from "./pages/HeaderBar";
 
 // const defaultPosts: IPostProps[] = [
 //   { title: 'React Hooks', content: 'The greatest thing since sliced bread!', author: 'Daniel Bugl' },
@@ -52,17 +52,11 @@ export default function App(): JSX.Element {
     // [StateContext]: { state, dispatch }, // This doesn't seem to work
     [ThemeContext]: theme
   };
-  debugger;
+
   return (
     <VDom.Context value={context}>
       <div style={{padding: 8}}>
-        <Header text="React Hooks Blog"/>
-        <ChangeTheme theme={theme} setTheme={setTheme} />
-        <br />
-        <UserBar user={user} dispatch={dispatch} />
-        <br/>
-        {user && <CreatePost user={user} posts={posts} dispatch={dispatch} />}
-        <br/>
+        <HeaderBar user={user} posts={posts} postDispatch={dispatch} setTheme={setTheme} userBarDispatch={dispatch} />
         <hr/>
         {error && <b>{error}</b>}
         <PostList posts={posts} />

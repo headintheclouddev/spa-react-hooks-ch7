@@ -44,7 +44,7 @@ export default function ChangeTheme(props: { theme: ITheme, setTheme: (theme: IT
   )
 }
 
-interface ITheme {
+export interface ITheme {
   primaryColor: string;
   secondaryColor: string;
 }

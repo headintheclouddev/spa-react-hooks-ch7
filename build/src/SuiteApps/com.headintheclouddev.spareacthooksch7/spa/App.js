@@ -1,15 +1,15 @@
 import { jsx as _jsx, jsxs as _jsxs } from "@uif-js/core/jsx-runtime";
 import { useReducer, useEffect, VDom, useState } from '@uif-js/core';
-import UserBar from './user/UserBar';
+// import UserBar from './user/UserBar';
 import PostList from './post/PostList';
-import CreatePost from './post/CreatePost';
-// import {IPostProps} from "./post/Post";
+// import CreatePost from './post/CreatePost';
 import appReducer from "./reducers";
-import Header from './Header';
-import ChangeTheme from './ChangeTheme';
+// import Header from './Header';
+// import ChangeTheme from './ChangeTheme';
 import { ThemeContext } from './contexts';
 import log from 'N/log';
 import query from "N/query";
+import HeaderBar from "./pages/HeaderBar";
 // const defaultPosts: IPostProps[] = [
 //   { title: 'React Hooks', content: 'The greatest thing since sliced bread!', author: 'Daniel Bugl' },
 //   { title: 'Using React Fragments', content: 'Keeping the DOM tree clean!', author: 'Daniel Bugl' }
@@ -46,6 +46,5 @@ export default function App() {
         // [StateContext]: { state, dispatch }, // This doesn't seem to work
         [ThemeContext]: theme
     };
-    debugger;
-    return (_jsx(VDom.Context, { value: context, children: _jsxs("div", { style: { padding: 8 }, children: [_jsx(Header, { text: "React Hooks Blog" }), _jsx(ChangeTheme, { theme: theme, setTheme: setTheme }), _jsx("br", {}), _jsx(UserBar, { user: user, dispatch: dispatch }), _jsx("br", {}), user && _jsx(CreatePost, { user: user, posts: posts, dispatch: dispatch }), _jsx("br", {}), _jsx("hr", {}), error && _jsx("b", { children: error }), _jsx(PostList, { posts: posts })] }) }));
+    return (_jsx(VDom.Context, { value: context, children: _jsxs("div", { style: { padding: 8 }, children: [_jsx(HeaderBar, { user: user, posts: posts, postDispatch: dispatch, setTheme: setTheme, userBarDispatch: dispatch }), _jsx("hr", {}), error && _jsx("b", { children: error }), _jsx(PostList, { posts: posts })] }) }));
 }
