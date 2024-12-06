@@ -14,6 +14,7 @@ export default function Post(props: IPostProps) {
 }
 
 export interface IPostProps {
+  id: number;
   title: string;
   content: string;
   author: string;
