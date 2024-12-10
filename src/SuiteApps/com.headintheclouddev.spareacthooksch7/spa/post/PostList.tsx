@@ -10,7 +10,7 @@ export default function PostList(props: { posts: IPostProps[] } = { posts: [] })
     posts.push(
       <div>
         <VDom.Fragment>
-          <Post {...post} />
+          <Post {...post} short={true} />
           <hr />
         </VDom.Fragment>
       </div>
