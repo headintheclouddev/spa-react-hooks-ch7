@@ -1,10 +1,10 @@
-import { JSX, useReducer, useEffect, VDom, useState } from '@uif-js/core';
-// import PostList from './post/PostList';
+import { JSX, Router, useReducer, useEffect, VDom, useState } from '@uif-js/core';
 import appReducer from "./reducers";
 import { ThemeContext } from './contexts';
 import log from 'N/log';
 import HeaderBar from "./pages/HeaderBar";
-// import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
+import {RootRoute} from "./BlogAppRoute";
 import PostPage from "./pages/PostPage";
 
 export default function App(): JSX.Element {
@@ -27,14 +27,23 @@ export default function App(): JSX.Element {
     [ThemeContext]: theme
   };
 
-  // <HomePage posts={posts} dispatch={dispatch} error={error} />
+  // <PostPage id={6} />
   return (
-    <VDom.Context value={context}>
-      <div style={{padding: 8}}>
-        <HeaderBar user={user} posts={posts} postDispatch={dispatch} setTheme={setTheme} userBarDispatch={dispatch} />
-        <hr/>
-        <PostPage id={6} />
-      </div>
-    </VDom.Context>
+    <Router.Hash>
+      <VDom.Context value={context}>
+        <div style={{padding: 8}}>
+          <HeaderBar user={user} posts={posts} postDispatch={dispatch} setTheme={setTheme} userBarDispatch={dispatch} />
+          <hr/>
+          <Router.Routes>
+            <Router.Route path={RootRoute.HOMEPAGE} exact={true}>
+              <HomePage posts={posts} dispatch={dispatch} error={error} />
+            </Router.Route>
+            <Router.Route path={RootRoute.POST} exact={true}>
+              <PostPage id={0} />
+            </Router.Route>
+          </Router.Routes>
+        </div>
+      </VDom.Context>
+    </Router.Hash>
   )
 }
