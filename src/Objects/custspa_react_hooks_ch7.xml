@@ -1,7 +1,7 @@
 <singlepageapp scriptid="custspa_react_hooks_ch7">
   <name>React Hooks - Chapter 7</name>
   <description>React Hooks chapter 7 - Using Hooks for Routing</description>
-  <url>react-hooks-chapter-5</url>
+  <url>react-hooks-chapter-7</url>
   <folder>[/SuiteApps/com.headintheclouddev.spareacthooksch7/spa/]</folder>
   <clientscriptfile>[/SuiteApps/com.headintheclouddev.spareacthooksch7/spa/SpaClient.js]</clientscriptfile>
   <serverscriptfile>[/SuiteApps/com.headintheclouddev.spareacthooksch7/spa/SpaServer.js]</serverscriptfile>
