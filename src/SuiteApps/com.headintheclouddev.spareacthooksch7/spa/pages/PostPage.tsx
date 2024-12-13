@@ -1,6 +1,7 @@
 import query from "N/query";
 import { useEffect, useState } from "@uif-js/core";
 import Post from "../post/Post";
+import { Link } from "@uif-js/component";
 
 export default function PostPage(props: { id: number }) {
   const [post, setPost] = useState(null);
@@ -18,6 +19,7 @@ export default function PostPage(props: { id: number }) {
   }, [props.id]);
   return (
     <div>
+      <Link route={{ route: '/' }}>Go back</Link>
       {(post && post.data) ? <Post {...post.data} /> : 'Loading...'}
       <hr />
     </div>
