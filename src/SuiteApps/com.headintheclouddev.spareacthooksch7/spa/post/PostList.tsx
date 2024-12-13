@@ -8,12 +8,10 @@ export default function PostList(props: { posts: IPostProps[] } = { posts: [] })
   const posts: IPostProps[] = [];
   for (const post of props.posts) {
     posts.push(
-      <div>
-        <VDom.Fragment>
-          <Post {...post} short={true} />
-          <hr />
-        </VDom.Fragment>
-      </div>
+      <VDom.Fragment>
+        <Post {...post} short={true} />
+        <hr />
+      </VDom.Fragment>
     );
   }
   return (<div>{posts}</div>);

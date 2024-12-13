@@ -7,7 +7,7 @@ export default function PostList(props = { posts: [] }) {
     // const { posts } = state;
     const posts = [];
     for (const post of props.posts) {
-        posts.push(_jsx("div", { children: _jsxs(VDom.Fragment, { children: [_jsx(Post, { ...post, short: true }), _jsx("hr", {})] }) }));
+        posts.push(_jsxs(VDom.Fragment, { children: [_jsx(Post, { ...post, short: true }), _jsx("hr", {})] }));
     }
     return (_jsx("div", { children: posts }));
 }
