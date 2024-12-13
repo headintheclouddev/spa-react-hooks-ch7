@@ -1,4 +1,4 @@
-import { useState } from "@uif-js/core";
+import { useEffect, useState } from "@uif-js/core";
 import {TextArea, TextBox} from "@uif-js/component";
 import {IPostProps} from "./Post";
 import record from 'N/record';
@@ -9,6 +9,7 @@ export default function CreatePost(props: { user: string, posts: IPostProps[], d
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [post, setPost] = useState(null); // We use this instead of useResource
 
   const createPost = (params: { title: string, content: string, author: string }) => {
     record.create.promise({ type: 'customrecord_blog_post' }).then((blogPost) => {
@@ -17,23 +18,31 @@ export default function CreatePost(props: { user: string, posts: IPostProps[], d
       // blogPost.setValue('owner', params.author); // This doesn't work because it isn't the employee id.  maybe revisit after truly implementing login
       blogPost.save.promise().then((id) => {
         console.log("Successfully created blog post", id);
+        setPost({ data: { ...params, id } });
       }).catch((error) => {
         alert(error);
       });
     });
   }
+  useEffect(() => {
+    if (post && post.data) {
+      props.dispatch({ type: 'CREATE_POST', ...post.data });
+    }
+  }, [post]);
 
   function handleTitle(evt: TextBox.TextChangedArgs) {
     console.log('handleTitle');
     setTitle(evt.text);
   }
+
   function handleContent(evt: TextBox.TextChangedArgs) {
     console.log('handleContent');
     setContent(evt.text);
   }
+
   function handleCreate() {
     createPost({ title, content, author: props.user });
-    props.dispatch({ type: 'CREATE_POST', title, content, author: props.user });
+    // props.dispatch({ type: 'CREATE_POST', title, content, author: props.user });
   }
 
   return (
