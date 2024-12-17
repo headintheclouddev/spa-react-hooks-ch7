@@ -1,7 +1,7 @@
 <manifest projecttype="SUITEAPP">
   <publisherid>com.headintheclouddev</publisherid>
-  <projectid>spareacthooksch7</projectid>
-  <projectname>SPA React Hooks Chapter 7</projectname>
+  <projectid>spareacthooksch10</projectid>
+  <projectname>SPA React Hooks Chapter 10</projectname>
   <projectversion>1.0.0</projectversion>
   <frameworkversion>1.0</frameworkversion>
   <dependencies>

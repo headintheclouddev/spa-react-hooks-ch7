@@ -1,0 +1,14 @@
+<singlepageapp scriptid="custspa_react_hooks_ch10">
+  <name>React Hooks - Chapter 10</name>
+  <description>React Hooks chapter 10 - Building Your Own Hooks</description>
+  <url>react-hooks-chapter-7</url>
+  <folder>[/SuiteApps/com.headintheclouddev.spareacthooksch10/spa/]</folder>
+  <clientscriptfile>[/SuiteApps/com.headintheclouddev.spareacthooksch10/spa/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.headintheclouddev.spareacthooksch10/spa/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.headintheclouddev.spareacthooksch10/spa/assets/]</assetsfolder>
+  <loglevel>DEBUG</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+  <usesuif>T</usesuif>
+</singlepageapp>
