@@ -1,6 +1,6 @@
 <deploy>
     <files>
-        <path>~/FileCabinet/SuiteApps/com.headintheclouddev.spareacthooksch10/*</path>
+        <path>~/FileCabinet/SuiteApps/com.headintheclouddev.spareacthooksch7/*</path>
     </files>
     <objects>
         <path>~/Objects/*</path>

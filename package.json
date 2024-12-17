@@ -1,9 +1,9 @@
 {
-  "name": "spa-react-hooks-ch10",
+  "name": "spa-react-hooks-ch7",
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
-    "@hitc/netsuite-types": "^2024.2.11",
+    "@hitc/netsuite-types": "^2024.2.9",
     "@oracle/netsuite-uif-types": "^6.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "gulp": "^5.0.0",
